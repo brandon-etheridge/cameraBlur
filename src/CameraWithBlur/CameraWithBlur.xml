@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="CameraWithBlur.widget.CameraWithBlur" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>CameraWithBlur</name>
+    <description>Phonegap camera with blur detection.</description>
+
+    <icon />
+
+    <phonegap enabled="true"/>
+    <properties>
+        <property key="buttonClass" type="string" defaultValue="wx-mxwx-button-blur">
+            <caption>Class</caption>
+            <category>Button</category>
+            <description>The CSS class on the button</description>
+        </property>
+        <property key="buttonText" type="translatableString">
+            <caption>Label</caption>
+            <category>Button</category>
+            <description/>
+            <translations>
+                <translation lang="en_US">Activate camera</translation>
+                <translation lang="nl_NL">Camera activeren</translation>
+            </translations>
+        </property>
+        <property key="imageContainerClass" type="string" defaultValue="wx-mxwx-imagecontainer-blur">
+            <caption>Image container class</caption>
+            <category>Appearance</category>
+            <description>The CSS class on the preview</description>
+        </property>
+        <property key="imageWidth" type="integer" defaultValue="150">
+            <caption>Width</caption>
+            <category>Appearance</category>
+            <description>The width of the image thumbnail</description>
+        </property>
+        <property key="imageHeight" type="integer" defaultValue="150">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the image thumbnail</description>
+        </property>
+        <property key="imageLocation" type="enumeration" defaultValue="right">
+            <caption>Image location</caption>
+            <category>Appearance</category>
+            <description>The position where the thumbnail image is set</description>
+            <enumerationValues>
+                <enumerationValue key="above">Above</enumerationValue>
+                <enumerationValue key="below">Below</enumerationValue>
+                <enumerationValue key="left">Left</enumerationValue>
+                <enumerationValue key="right">Right</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="targetWidth" type="integer" defaultValue="150">
+            <caption>Quality width</caption>
+            <category>Image quality</category>
+            <description>The width of the captured image</description>
+        </property>
+        <property key="targetHeight" type="integer" defaultValue="150">
+            <caption>Quality height</caption>
+            <category>Image quality</category>
+            <description>The height of the captured image</description>
+        </property>
+        <property key="autoCapture" type="boolean" defaultValue="false">
+            <caption>Auto capture</caption>
+            <category>Behavior</category>
+            <description>Enable auto capture to automatically start the camera</description>
+        </property>
+        <property key="autoSaveEnabled" type="boolean" defaultValue="false">
+            <caption>Auto save</caption>
+            <category>Behavior</category>
+            <description>Enable auto save to automatically save your image</description>
+        </property>
+        <property key="onchangemf" type="microflow" required="false">
+            <caption>On save microflow</caption>
+            <category>Behavior</category>
+            <description>This microflow is called when the object is saved. Use this to commit the object when using autosave</description> 
+            <returnType type="Void"/>
+        </property>
+        <property key="onSaveNanoflow" type="nanoflow" required="false">
+            <caption>On save nanoflow</caption>
+            <category>Behavior</category>
+            <description>This nanoflow is called when the object is saved. Use this to commit the object when using autosave</description> 
+            <returnType type="Void"/>
+        </property>
+        <property key="pictureSource" type="enumeration" defaultValue="camera">
+            <caption>Picture source</caption>
+            <category>Behavior</category>
+            <description>Grab image from either the camera or the phone's image gallery</description>
+            <enumerationValues>
+                <enumerationValue key="camera">Camera</enumerationValue>
+                <enumerationValue key="gallery">Gallery</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="blockingUpload" type="enumeration" defaultValue="disabled">
+            <caption>Block during upload</caption>
+            <category>Behavior</category>
+            <description>Prevent any form interaction. Shows the blocking progress message during the whole upload. Or show 'On form save', useful for 'autosave', will only show the blocking progress when the form will be closed, and the upload is not completed</description>
+            <enumerationValues>
+                <enumerationValue key="disabled">None</enumerationValue>
+                <enumerationValue key="duringUpload">During upload</enumerationValue>
+                <enumerationValue key="onFormSave">On form save</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="progressText" type="translatableString" required="false" >
+            <caption>Progress upload text</caption>
+            <category>Behavior</category>
+            <description/>
+            <translations>
+                <translation lang="en_US">Uploading image in progress...</translation>
+                <translation lang="nl_NL">Bezig met uploaden van de afbeelding...</translation>
+            </translations>
+        </property>
+    </properties>
+</widget>
